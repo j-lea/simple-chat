@@ -10,15 +10,6 @@ export default class MessageInput extends Component {
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.sendMessage = this.sendMessage.bind(this);
-    }
-
-    sendMessage(messageText) {
-        this.props.stompClient.send(
-            "/app/chat.sendMessage",
-            {},
-            JSON.stringify({ messageText: messageText })
-        );
     }
 
     handleChange(event) {
@@ -27,7 +18,7 @@ export default class MessageInput extends Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        this.sendMessage(this.state.messageText);
+        this.props.sendMessage(this.state.messageText);
         this.setState({
             messageText: '',
         });

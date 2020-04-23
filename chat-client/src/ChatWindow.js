@@ -15,6 +15,7 @@ export default class ChatWindow extends Component {
         };
 
         this.onConnected = this.onConnected.bind(this);
+        this.sendMessage = this.sendMessage.bind(this);
         this.receiveMessage = this.receiveMessage.bind(this);
     }
 
@@ -24,6 +25,14 @@ export default class ChatWindow extends Component {
 
     onConnected() {
         this.stompClient.subscribe('/topic/messages', this.receiveMessage);
+    }
+
+    sendMessage(messageText) {
+        this.stompClient.send(
+            "/app/chat.sendMessage",
+            {},
+            JSON.stringify({ messageText: messageText })
+        );
     }
 
     receiveMessage(payload) {
@@ -36,7 +45,7 @@ export default class ChatWindow extends Component {
         return (
             <div className="chat-window">
                 <Conversation messages={this.state.messageHistory}></Conversation>
-                <MessageInput stompClient={this.stompClient}></MessageInput>
+                <MessageInput sendMessage={this.sendMessage}></MessageInput>
             </div>
         );
     }
