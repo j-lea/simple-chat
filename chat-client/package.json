@@ -1,0 +1,42 @@
+{
+  "scripts": {
+    "start": "webpack-dev-server --mode development --open",
+    "build": "webpack --mode production",
+    "test": "jest"
+  },
+  "jest": {
+    "setupFiles": [
+      "<rootDir>/test/setupTests.js"
+    ]
+  },
+  "name": "chat-client",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "J dog",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "@neutrinojs/react": "^9.1.0",
+    "@stomp/stompjs": "^5.4.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "sockjs-client": "^1.4.0",
+    "websocket": "^1.0.31"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "@babel/preset-react": "^7.9.4",
+    "babel-jest": "^25.4.0",
+    "babel-loader": "^8.1.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "eslint": "^6.8.0",
+    "jest": "^25.4.0",
+    "jest-enzyme": "^7.1.2",
+    "neutrino": "^9.1.0",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  }
+}
