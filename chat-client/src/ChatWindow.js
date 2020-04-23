@@ -13,21 +13,17 @@ export default class ChatWindow extends Component {
         this.state = {
             messageHistory: [],
         };
-
-        this.onConnected = this.onConnected.bind(this);
-        this.sendMessage = this.sendMessage.bind(this);
-        this.receiveMessage = this.receiveMessage.bind(this);
     }
 
     componentDidMount() {
         this.stompClient.connect({}, this.onConnected, this.onError);
     }
 
-    onConnected() {
+    onConnected = () => {
         this.stompClient.subscribe('/topic/messages', this.receiveMessage);
     }
 
-    sendMessage(messageText) {
+    sendMessage = (messageText) => {
         this.stompClient.send(
             "/app/chat.sendMessage",
             {},
@@ -35,7 +31,7 @@ export default class ChatWindow extends Component {
         );
     }
 
-    receiveMessage(payload) {
+    receiveMessage = (payload) => {
         const message = JSON.parse(payload.body);
         const messageHistory = [...this.state.messageHistory, message.messageText];
         this.setState({ messageHistory });

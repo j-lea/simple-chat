@@ -4,11 +4,9 @@ export default class Conversation extends Component {
 
     constructor(props) {
         super(props);
-
-        this.getMessages = this.getMessages.bind(this);
     }
 
-    getMessages() {
+    getMessages = () => {
         return this.props.messages.map(
             (message) => <div className="message" key={Math.random()}>{message}</div>);
     }

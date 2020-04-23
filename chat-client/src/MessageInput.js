@@ -7,16 +7,13 @@ export default class MessageInput extends Component {
         this.state = {
             messageText: '',
         };
-
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleChange(event) {
+    handleChange = (event) => {
         this.setState({ messageText: event.target.value });
     }
 
-    handleSubmit(event) {
+    handleSubmit = (event) => {
         event.preventDefault();
         this.props.sendMessage(this.state.messageText);
         this.setState({
