@@ -2,7 +2,8 @@
   "scripts": {
     "start": "webpack-dev-server --mode development --open",
     "build": "webpack --mode production",
-    "test": "jest"
+    "test": "jest",
+    "cypress":  "cypress open"
   },
   "jest": {
     "setupFiles": [
@@ -29,6 +30,7 @@
     "@babel/preset-react": "^7.9.4",
     "babel-jest": "^25.4.0",
     "babel-loader": "^8.1.0",
+    "cypress": "^4.4.1",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "eslint": "^6.8.0",

@@ -6,7 +6,7 @@ import {Stomp} from "@stomp/stompjs/esm5/compatibility/stomp";
 
 export default class ChatWindow extends Component {
 
-    stompClient = Stomp.over(new SockJS('http://localhost:8080/chat'));
+    stompClient = Stomp.over(new SockJS('http://localhost:8080/ws'));
 
     constructor(props) {
         super(props);

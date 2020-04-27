@@ -18,7 +18,7 @@ public class ChatController {
         messageHistory = new ArrayList<>();
     }
 
-    // Messages with destination /app/chat.sendMesage
+    // Messages with destination /app/chat.sendMessage
     @MessageMapping("/chat.sendMessage")
     @SendTo("/topic/messages")
     public ChatMessage sendMessage(@Payload ChatMessage chatMessage) {

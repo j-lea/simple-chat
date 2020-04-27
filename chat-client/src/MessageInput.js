@@ -24,7 +24,13 @@ export default class MessageInput extends Component {
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
-                <input type="text" name="message" value={this.state.messageText} onChange={this.handleChange}/>
+                <input
+                    type="text"
+                    autoFocus={true}
+                    name="message"
+                    className="message-input"
+                    value={this.state.messageText}
+                    onChange={this.handleChange}/>
                 <button type="submit" name="send" value="Send">Send</button>
             </form>
         )
