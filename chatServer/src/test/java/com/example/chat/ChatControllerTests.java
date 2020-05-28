@@ -50,12 +50,13 @@ public class ChatControllerTests {
         StompSession session = createStompClient().connect(url, sessionHandler).get();
 
         session.subscribe(SUBSCRIBE_MESSAGE_ENDPOINT, new ChatMessageStompFrameHandler());
-        session.send(SEND_MESSAGE_ENDPOINT, new ChatMessage("This is my message"));
+        session.send(SEND_MESSAGE_ENDPOINT, new ChatMessage("This is my message", "Jenny504"));
 
         ChatMessage receivedMessage = messageFuture.get(3, SECONDS);
 
         assertNotNull(receivedMessage);
         assertEquals("This is my message", receivedMessage.getMessageText());
+        assertEquals("Jenny504", receivedMessage.getSenderName());
     }
 
     private WebSocketStompClient createStompClient() {

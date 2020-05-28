@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import type {ChatMessage} from "./ChatWindow";
 
 export default class Conversation extends Component {
 
@@ -8,7 +9,11 @@ export default class Conversation extends Component {
 
     getMessages = () => {
         return this.props.messages.map(
-            (message) => <div className="message" key={Math.random()}>{message}</div>);
+            (message: ChatMessage) =>
+                <div className="message" key={Math.random()}>
+                    <p className="message-text">{message.messageText}</p>
+                    <p className="sender">{message.senderName}</p>
+                </div>);
     }
 
     render() {

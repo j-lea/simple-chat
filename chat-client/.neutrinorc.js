@@ -2,10 +2,18 @@
 const react = require('@neutrinojs/react');
 
 module.exports = {
-  options: {
-    root: __dirname
-  },
   use: [
-    react()
-  ]
+      react({
+        babel: {
+          presets: [
+            [
+              '@babel/preset-flow',
+              {
+                useBuiltIns: 'usage',
+              },
+            ],
+          ]
+        }
+      })
+  ],
 };

@@ -1,12 +1,18 @@
 import React, { Component } from 'react';
 
-export default class MessageInput extends Component {
+class InputProps {
+    sendMessage: (string) => void
+}
+
+export default class MessageInput extends Component<InputProps> {
+
+    initialState = {
+        messageText: '',
+    };
 
     constructor(props) {
         super(props);
-        this.state = {
-            messageText: '',
-        };
+        this.state = this.initialState;
     }
 
     handleChange = (event) => {
