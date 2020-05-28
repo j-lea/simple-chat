@@ -2,6 +2,7 @@
   "license": "UNLICENSED",
   "dependencies": {},
   "devDependencies": {
-    "babel-plugin-transform-class-properties": "^6.24.1"
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2"
   }
 }

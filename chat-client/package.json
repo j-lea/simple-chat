@@ -1,14 +1,10 @@
 {
   "scripts": {
-    "start": "webpack-dev-server --mode development --open",
+    "start": "webpack-dev-server",
     "build": "webpack --mode production",
-    "test": "jest",
-    "cypress":  "cypress open"
-  },
-  "jest": {
-    "setupFiles": [
-      "<rootDir>/test/setupTests.js"
-    ]
+    "test:unit": "jest src",
+    "cypress": "cypress open",
+    "cypress:run": "cypress run"
   },
   "name": "chat-client",
   "version": "1.0.0",
